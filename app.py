@@ -31,7 +31,7 @@ st.write(
 # FLUX.1-schnell is a fast, high-quality, free-to-use text-to-image model.
 # "schnell" is German for "fast" -- it's the distilled, speed-optimized
 # version of the FLUX.1 model family from Black Forest Labs.
-MODEL_ID = "black-forest-labs/FLUX.1-schnell"
+MODEL_ID = "Qwen/Qwen-Image-2512"
 
 
 @st.cache_resource(show_spinner=False)
