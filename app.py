@@ -27,13 +27,30 @@ st.markdown(
     """
     <style>
 
-    /* -------------------- Global -------------------- */
+    /* =========================
+       MAIN APP
+       ========================= */
 
     .stApp {
         background:
-            radial-gradient(circle at 10% 10%, rgba(99, 102, 241, 0.10), transparent 28%),
-            radial-gradient(circle at 90% 20%, rgba(168, 85, 247, 0.10), transparent 30%),
-            linear-gradient(135deg, #f8fafc 0%, #eef2ff 50%, #faf5ff 100%);
+            radial-gradient(
+                circle at 10% 10%,
+                rgba(99, 102, 241, 0.10),
+                transparent 28%
+            ),
+            radial-gradient(
+                circle at 90% 20%,
+                rgba(168, 85, 247, 0.10),
+                transparent 30%
+            ),
+            linear-gradient(
+                135deg,
+                #f8fafc 0%,
+                #eef2ff 50%,
+                #faf5ff 100%
+            );
+
+        color: #1e293b !important;
     }
 
     .block-container {
@@ -42,7 +59,39 @@ st.markdown(
         padding-bottom: 3rem;
     }
 
-    /* -------------------- Header -------------------- */
+
+    /* =========================
+       FORCE TEXT COLORS
+       ========================= */
+
+    html,
+    body,
+    [class*="css"],
+    .stApp,
+    .stMarkdown,
+    p,
+    span,
+    label,
+    div {
+        color: #1e293b;
+    }
+
+    /* Streamlit labels */
+
+    label {
+        color: #334155 !important;
+    }
+
+    /* Markdown text */
+
+    .stMarkdown p {
+        color: #475569 !important;
+    }
+
+
+    /* =========================
+       HERO
+       ========================= */
 
     .hero {
         text-align: center;
@@ -54,161 +103,296 @@ st.markdown(
         height: 78px;
         margin: 0 auto 1.2rem auto;
         border-radius: 24px;
+
         display: flex;
         align-items: center;
         justify-content: center;
+
         font-size: 38px;
-        background: linear-gradient(135deg, #6366f1, #8b5cf6);
-        box-shadow: 0 15px 35px rgba(99, 102, 241, 0.25);
+
+        background: linear-gradient(
+            135deg,
+            #6366f1,
+            #8b5cf6
+        );
+
+        box-shadow:
+            0 15px 35px rgba(99, 102, 241, 0.25);
     }
 
     .hero h1 {
         font-size: 3rem;
         font-weight: 800;
         letter-spacing: -1.5px;
+
         margin-bottom: 0.5rem;
-        background: linear-gradient(90deg, #4f46e5, #7c3aed);
+
+        background: linear-gradient(
+            90deg,
+            #4f46e5,
+            #7c3aed
+        );
+
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
 
     .hero p {
         font-size: 1.08rem;
-        color: #64748b;
+        color: #64748b !important;
+
         max-width: 650px;
         margin: 0 auto;
+
         line-height: 1.7;
     }
 
-    /* -------------------- Prompt Card -------------------- */
+
+    /* =========================
+       PROMPT CARD
+       ========================= */
 
     .prompt-card {
-        background: rgba(255, 255, 255, 0.88);
-        border: 1px solid rgba(148, 163, 184, 0.22);
+        background: rgba(255, 255, 255, 0.95);
+
+        border: 1px solid #e2e8f0;
+
         border-radius: 24px;
+
         padding: 1.5rem;
+
         margin-top: 1rem;
         margin-bottom: 1.25rem;
-        box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+
+        box-shadow:
+            0 20px 50px rgba(15, 23, 42, 0.08);
+
         backdrop-filter: blur(12px);
     }
 
     .section-label {
         font-size: 0.92rem;
         font-weight: 700;
-        color: #334155;
+
+        color: #334155 !important;
+
         margin-bottom: 0.5rem;
     }
 
     .hint {
         font-size: 0.82rem;
-        color: #94a3b8;
+
+        color: #64748b !important;
+
         margin-top: 0.45rem;
     }
 
-    /* -------------------- Text Area -------------------- */
+
+    /* =========================
+       TEXT AREA
+       ========================= */
 
     .stTextArea textarea {
-        border-radius: 16px !important;
-        border: 1px solid #cbd5e1 !important;
+        color: #1e293b !important;
+
         background-color: #ffffff !important;
+
+        border: 1px solid #cbd5e1 !important;
+
+        border-radius: 16px !important;
+
         padding: 1rem !important;
+
         font-size: 1rem !important;
+
         line-height: 1.6 !important;
-        transition: all 0.2s ease !important;
     }
 
     .stTextArea textarea:focus {
+        color: #1e293b !important;
+
+        background-color: #ffffff !important;
+
         border-color: #6366f1 !important;
-        box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12) !important;
+
+        box-shadow:
+            0 0 0 3px rgba(99, 102, 241, 0.12) !important;
     }
 
-    /* -------------------- Generate Button -------------------- */
+    /* Placeholder */
+
+    .stTextArea textarea::placeholder {
+        color: #94a3b8 !important;
+        opacity: 1 !important;
+    }
+
+
+    /* =========================
+       GENERATE BUTTON
+       ========================= */
 
     .stButton > button {
         width: 100%;
+
         min-height: 52px;
+
         border: none !important;
+
         border-radius: 15px !important;
-        background: linear-gradient(135deg, #4f46e5, #7c3aed) !important;
-        color: white !important;
+
+        background:
+            linear-gradient(
+                135deg,
+                #4f46e5,
+                #7c3aed
+            ) !important;
+
+        color: #ffffff !important;
+
         font-size: 1rem !important;
+
         font-weight: 700 !important;
-        box-shadow: 0 10px 25px rgba(79, 70, 229, 0.25);
+
+        box-shadow:
+            0 10px 25px rgba(79, 70, 229, 0.25);
+
         transition: all 0.2s ease !important;
+    }
+
+    .stButton > button p,
+    .stButton > button span {
+        color: #ffffff !important;
     }
 
     .stButton > button:hover {
         transform: translateY(-2px);
-        box-shadow: 0 15px 30px rgba(79, 70, 229, 0.32);
+
+        box-shadow:
+            0 15px 30px rgba(79, 70, 229, 0.32);
     }
 
-    .stButton > button:active {
-        transform: translateY(0);
-    }
 
-    /* -------------------- Generated Image -------------------- */
+    /* =========================
+       RESULT SECTION
+       ========================= */
 
     .result-title {
         text-align: center;
+
         margin-top: 2rem;
         margin-bottom: 1rem;
     }
 
     .result-title h2 {
         font-size: 1.6rem;
+
         font-weight: 750;
-        color: #1e293b;
+
+        color: #1e293b !important;
     }
 
     .image-card {
-        background: white;
+        background: #ffffff;
+
         padding: 0.75rem;
+
         border-radius: 22px;
-        box-shadow: 0 20px 50px rgba(15, 23, 42, 0.12);
-        border: 1px solid rgba(148, 163, 184, 0.2);
+
+        box-shadow:
+            0 20px 50px rgba(15, 23, 42, 0.12);
+
+        border: 1px solid #e2e8f0;
     }
 
-    /* -------------------- Download Button -------------------- */
+
+    /* =========================
+       DOWNLOAD BUTTON
+       ========================= */
 
     .stDownloadButton > button {
         width: 100%;
+
         min-height: 48px;
+
         border-radius: 14px !important;
+
         font-weight: 650 !important;
+
         border: 1px solid #cbd5e1 !important;
-        background: white !important;
+
+        background: #ffffff !important;
+
         color: #334155 !important;
+
         transition: all 0.2s ease !important;
+    }
+
+    .stDownloadButton > button p,
+    .stDownloadButton > button span {
+        color: #334155 !important;
     }
 
     .stDownloadButton > button:hover {
         border-color: #6366f1 !important;
+
         color: #4f46e5 !important;
+
         transform: translateY(-1px);
     }
 
-    /* -------------------- Status Messages -------------------- */
+
+    /* =========================
+       ALERTS
+       ========================= */
 
     .stAlert {
         border-radius: 14px !important;
     }
 
-    /* -------------------- Footer -------------------- */
+
+    /* =========================
+       SPINNER
+       ========================= */
+
+    .stSpinner > div {
+        color: #4f46e5 !important;
+    }
+
+
+    /* =========================
+       FOOTER
+       ========================= */
 
     .footer {
         text-align: center;
+
         padding-top: 2rem;
-        color: #94a3b8;
+
+        color: #94a3b8 !important;
+
         font-size: 0.82rem;
+
         line-height: 1.7;
     }
 
     .footer strong {
-        color: #64748b;
+        color: #64748b !important;
     }
 
-    /* -------------------- Mobile -------------------- */
+    .footer code {
+        color: #6366f1 !important;
+
+        background: #eef2ff !important;
+
+        padding: 2px 6px;
+
+        border-radius: 5px;
+    }
+
+
+    /* =========================
+       MOBILE
+       ========================= */
 
     @media (max-width: 640px) {
 
